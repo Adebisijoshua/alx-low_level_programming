@@ -1,25 +1,28 @@
 #include "main.h"
-
 /**
- * print_number - prints an integer
- * @n: input integer parameter
- * Return: Always 0
+ * print_triangle - This will print a triangle
+ * @size:size is the parameter of the triangle
+ * Return: This will return nothing
  */
-void print_number(int n)
+void print_triangle(int size)
 {
-unsigned int i;
-if (n < 0)
-{
-_putchar('-');
-i = -n;
-}
-else
-{
-i = n;
-}
-if (i / 10 != 0)
-{
-print_number(i / 10);
-}
-_putchar(i % 10 + '0');
+	int inx1, inx2;
+
+	if (size > 0)
+	{
+		for (inx1 = 1; inx1 <= size; inx1++)
+		{
+			for ((inx2 = size - inx1); inx2 > 0; inx2--)
+				_putchar(' ');
+
+			for (inx2 = 0; inx2 < inx1; inx2++)
+				_putchar('#');
+
+			if (inx1 == size)
+				continue;
+
+			_putchar('\n');
+		}
+	}
+	_putchar('\n');
 }
