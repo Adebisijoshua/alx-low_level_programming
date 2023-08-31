@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code
  *
  * Return: Always 0.
  */
@@ -33,6 +33,6 @@ int main(void)
     r = wildcmp("main", "main*d");
     printf("%d\n", r);
     r = wildcmp("abc", "*b");
-    printf("%d\n", r);	
+    printf("%d\n", r);
     return (0);
 }

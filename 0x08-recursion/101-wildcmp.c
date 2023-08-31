@@ -4,9 +4,9 @@ int _equal_no_aster(char *s4, char *s5, int cont_2);
 int identical_asterisk(char *s6, char *s7, int cont_3, int cont_4);
 
 /**
- * wildcmp - function that compare two strings and consiere identicals
- * @s1: char to review
- * @s2: char to compare
+ * wildcmp - This function will compare two strings and consiere identicals
+ * @s1: This the char to review
+ * @s2: This is the char to compare
  *
  * Return: 1 if identical, 0 else no identical
  */
@@ -22,9 +22,9 @@ int wildcmp(char *s1, char *s2)
 	return (2);
 }
 /**
- * _check_asterisk - function that check if there is a asterisk
- * @s3: char to review
- * @cont_1: contador
+ * _check_asterisk - This function will check if there is a asterisk
+ * @s3: This is the char to review
+ * @cont_1: our contador
  *
  * Return: 1 if there is a *,else 0
  */
@@ -34,13 +34,13 @@ int _check_asterisk(char *s3, int cont_1)
 		return (0);
 	if (s3[cont_1] == '*')
 		return (1);
-	return (_check_asterisk(s3, cont_1 + 1));
+return (_check_asterisk(s3, cont_1 + 1));
 }
 /**
- * _equal_no_aster - check if is equal with out asterisk
- * @s4: char to review
- * @s5: char to review
- * @cont_2: contador
+ * _equal_no_aster - This will check if is equal with out asterisk
+ * @s4: This is the char to review
+ * @s5: This is the char to review
+ * @cont_2: our contador
  *
  * Return: 1 if there are equal, else 0
  */
@@ -56,10 +56,10 @@ int _equal_no_aster(char *s4, char *s5, int cont_2)
 }
 /**
  * identical_asterisk - check if there are identical whit asterisk
- * @s6: char to review
- * @s7: char to review
- * @cont_3: contador
- * @cont_4: contador
+ * @s6: This is the char to review
+ * @s7: This is the char to review
+ * @cont_3: our contador
+ * @cont_4: our contador
  *
  * Return: 1 if s1 y s2 are identical, else 0
  */
