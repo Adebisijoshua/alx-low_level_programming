@@ -1,24 +1,32 @@
 #include <stdio.h>
 
 /**
- * is_little_endian - Checks if the system is little-endian.
+ * check_endianness - Checks the endianness of the system.
  *
  * Return: 1 if the system is little-endian, 0 if it's big-endian.
  */
-int is_little_endian(void)
+int check_endianness(void)
 {
-	unsigned int x = 1;
+	int x = 1;
 	char *c = (char *)&x;
 
-	/* If the first byte (lowest address) of the integer is 1,
-	 * it means the system is little-endian.
-	 */
-	return (*c == 1);
+	if (*c == 1)
+		return (1); /* Little-endian */
+
+	return (0); /* Big-endian */
 }
 
+/**
+ * main - Entry point of the program.
+ *
+ * Description: This function checks the endianness of the system and prints
+ * whether it's little-endian or big-endian.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	if (is_little_endian())
+	if (check_endianness())
 	{
 		printf("This system is little-endian.\n");
 	}
