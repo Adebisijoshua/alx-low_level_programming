@@ -24,3 +24,5 @@ mandatory
 Write a program that copies the content of a file to another file.
 
 0x15. C - File I/O
+
+I think I am good to go now 
