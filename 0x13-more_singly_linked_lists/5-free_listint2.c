@@ -1,15 +1,21 @@
+/**
+ *Name of file : Task 5
+*/
+
+
 #include "lists.h"
 
 /**
- * free_listint2 - frees a linked list
- * @head: head of a list.
+ * free_listint2 - allows a link file to list
+ * @head: list with the head.
  *
- * Return: no return.
+ * Return: It os goign to return nothing
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp;
+
 	listint_t *curr;
+	listint_t *temp;
 
 	if (head != NULL)
 	{
