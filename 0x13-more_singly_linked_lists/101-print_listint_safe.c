@@ -4,7 +4,7 @@
  * free_listp - frees a linked list
  * @head: head of a list.
  *
- * Return: no return.
+ * Return: It will not return anyhting
  */
 void free_listp(listp_t **head)
 {
@@ -27,7 +27,7 @@ void free_listp(listp_t **head)
  * print_listint_safe - prints a linked list.
  * @head: head of a list.
  *
- * Return: number of nodes in the list.
+ * Return: give no of nodes in the list.
  */
 size_t print_listint_safe(const listint_t *head)
 {
