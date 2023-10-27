@@ -1,49 +1,21 @@
 #include "main.h"
 
 /**
- * power raise - solve calculates ( power raise to)
- * @base:that of the exponent
- * @power: that of  the exponent
+ * print_binary - give  the binary
+ * @n: unsigned long of the binary
  *
- * Return: value of raise power
- */
-unsigned long int _pow(unsigned int base, unsigned int power)
-{
-	unsigned long int num;
-	unsigned int a;
-
-	num = 1;
-	for (a = 1; a <= power; a++)
-		num *= base;
-	return (num);
-}
-
-/**
- * print_binary - shows a number in binary notation
- * @n: int number to print
- *
- * Return: nothing
+ * Return: give nothing.
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int divisor, check;
-	char flag;
-
-	flag = 0;
-	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (divisor != 0)
+	if (n >> 0)
 	{
-		check = n & divisor;
-		if (check == divisor)
-		{
-			flag = 1;
-			_putchar('1');
-		}
-		else if (flag == 1 || divisor == 1)
-		{
-			_putchar('0');
-		}
-		divisor >>= 1;
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
+	}
+	else
+	{
+		_putchar('0');
 	}
 }
-
