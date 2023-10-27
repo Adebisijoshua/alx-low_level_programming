@@ -1,5 +1,5 @@
 #define MAIN_H
-#define MAIN_H
+#ifndef MAIN_H
 
 int get_endianness(void);
 unsigned int binary_to_uint(const char *b);
