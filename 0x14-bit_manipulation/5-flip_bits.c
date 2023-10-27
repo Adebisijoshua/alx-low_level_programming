@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * flip_bits - it  will count the number of bit 
+ * flip_bits - it  will count the number of bit
  * @n: It is the premier number
  * @m: It is the number that folllows
  *
