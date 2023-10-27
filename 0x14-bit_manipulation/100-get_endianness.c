@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * take_endianness - it will checks the endianness
+ * get_endianness - look for the endianness
  *
- * Return: 0 if large endianess, 1 if small endianess
+ * Return: 0 if big endian, 1 if little endian
  */
 int get_endianness(void)
 {
-	int a;
-	char *b;
+	unsigned int x;
+	char *c;
 
-	a = 1;
-	b = (char *)&a;
-	return (*b);
+	x = 1;
+	c = (char *) &x;
+
+	return ((int)*c);
 }
-
