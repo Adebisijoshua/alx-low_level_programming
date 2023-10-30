@@ -1,17 +1,20 @@
-#include <elf.h>
+/*
+ * Author : Adekunel Joshua Adebisi
+ * File: 100-elf_header.c
+ */
+
 #include <stdio.h>
+#include <elf.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <sys/stat.h>
 #include <unistd.h>
-#include <stdio.h>
+#include <sys/types.h>
 #include <stdlib.h>
 
-
-void print_class(unsigned char *e_ident);
+void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
+void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
-void check_elf(unsigned char *e_ident)
 void print_version(unsigned char *e_ident);
 void print_abi(unsigned char *e_ident);
 void print_osabi(unsigned char *e_ident);
@@ -20,10 +23,10 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 /**
- * check_elf - Know if a file is an ELF file or not
- * @e_ident: It will point to an array containing the ELF magic numbers.
+ * check_elf - Checks if a file is an ELF file.
+ * @e_ident:  pointing to an array containing the ELF magic numbers.
  *
- * Description: If the file is not of an ELF file - remove code 98.
+ * Description: If the file is not an ELF file - exit code 98.
  */
 void check_elf(unsigned char *e_ident)
 {
@@ -43,8 +46,8 @@ void check_elf(unsigned char *e_ident)
 }
 
 /**
- * print_magic - find magic numbers of an ELF header.
- * @e_ident: It point to an aray to an array containing the ELF magic numbers.
+ * print_magic - Prints the magic numbers of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
  * Description: Magic numbers are separated by spaces.
  */
@@ -154,7 +157,7 @@ void print_osabi(unsigned char *e_ident)
 		break;
 	case ELFOSABI_LINUX:
 		printf("UNIX - Linux\n");
-		break;
+	i	break;
 	case ELFOSABI_SOLARIS:
 		printf("UNIX - Solaris\n");
 		break;
@@ -223,15 +226,15 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * print_entry - Prints the entry point
+ * print_entry - Prints the entry point of an ELF header.
  * @e_entry: The address of the ELF entry point.
- * @e_ident: A pointer to an array
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-printf("  Entry point address:               ");
+	printf("  Entry point address:               ");
 
-if (e_ident[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
 			  ((e_entry >> 8) & 0xFF00FF);
@@ -263,9 +266,9 @@ void close_elf(int elf)
 
 /**
  * main - Displays the information contained in the
- *        ELF
- * @argc: The number of arguments
- * @argv: An array of pointers of the arguments.
+ *        ELF header at the start of an ELF file.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
  * Return: 0 on success.
  *
