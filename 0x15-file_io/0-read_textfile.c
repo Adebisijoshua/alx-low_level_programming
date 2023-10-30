@@ -1,36 +1,44 @@
 #include "main.h"
-
 /**
- * create-textfile - create a file and prints letters
- * @filename : file name
- * @letters:values  of letters to be  printed.
- *
- * Return: It fails 1, returns 0.
+ * create_textfile - This function is going to create a text of a file
+ *             print it to the POSIX standard output
+ * @filename: This is the type name of the filename
+ * @letters: This is will give the value letters
+ * Return: if cannot be read 0, if is NULL 0, Success 1
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t nrd, nwr;
+
+	int fk;
+	ssize_t rk, wr;
 	char *buf;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
-
-	fd = open(filename, O_RDONLY);
-
-	if (fd == -1)
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
 		return (0);
-
-	buf = malloc(sizeof(char) * (letters));
-	if (!buf)
+	fk = open(filename, O_RDONLY);
+	if (fk == -1)
+	{
+		free(buf);
 		return (0);
-
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nrd);
-
-	close(fd);
-
-	free(buf);
-
-	return (nwr);
+	}
+	rk = read(fk, buf, letters);
+	if (rk == -1)
+	{
+		free(buf);
+		close(fk);
+		return (0);
+	}
+	close(fk);
+	wr = write(STDOUT_FILENO, buf, rk);
+	if (wr == -1)
+	{
+		free(buf);
+		return (0);
+	}
+	if (wr != rk)
+		return (0);
+	return (rk);
 }
