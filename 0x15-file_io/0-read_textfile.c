@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * create_textfile - This function is going to create a text of a file
+ * read_textfile - This function is going to create a text of a file
  *             print it to the POSIX standard output
  * @filename: This is the type name of the filename
  * @letters: This is will give the value letters
