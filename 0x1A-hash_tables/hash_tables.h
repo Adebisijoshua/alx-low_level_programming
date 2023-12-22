@@ -2,11 +2,11 @@
 #define HASH_TABLE_H
 
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
- * struct hash_node_s - hash table with a node
+ * struct hash_node_s - Node of a hash table
  *
  * @key: The key, string
  * The key is unique in the HashTable
@@ -35,7 +35,7 @@ typedef struct hash_table_s
 } hash_table_t;
 
 /**
- * struct shash_node_s -  sorted hash table
+ * struct shash_node_s - Node of a sorted hash table
  *
  * @key: The key, string
  * The key is unique in the HashTable
@@ -50,7 +50,7 @@ typedef struct shash_node_s
 	char *value;
 	struct shash_node_s *next;
 	struct shash_node_s *sprev;
- struct shash_node_s *snext;
+	struct shash_node_s *snext;
 } shash_node_t;
 
 /**
@@ -58,8 +58,9 @@ typedef struct shash_node_s
  *
  * @size: The size of the array
  * @array: An array of size @size
- * Each cell of this array is a pointer to the first node of a linked list
- * A pointer to the first element of the sorted linked list
+ * Each cell of this array is a pointer to the first node of a linked list,
+ * because we want our HashTable to use a Chaining collision handling
+ * @shead: A pointer to the first element of the sorted linked list
  * @stail: A pointer to the last element of the sorted linked list
  */
 typedef struct shash_table_s
