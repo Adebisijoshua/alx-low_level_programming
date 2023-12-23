@@ -3,11 +3,11 @@
 /**
  * shash_table_create - function that makes a hash table
  *
- * Description: function that creates a hash table
+ * Description: funct that makes  a hash table
  *
- * @size: the size of the array
+ * @size: The Array size
  *
- * Return: return NULL or Hash Table
+ * Return: return EMPTY or Hash Table
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
@@ -35,9 +35,9 @@ shash_table_t *shash_table_create(unsigned long int size)
  * shash_sorted_list_update - update
  *
  * @ht: sorted
- * @new_node: node
- * @key: key
- * @value: value
+ * @new_node: node of the function
+ * @key: key of the function
+ * @value: value of the function
  *
  * Return: 1 or 0
  */
@@ -104,7 +104,7 @@ int shash_sorted_list_insert(shash_table_t **ht, shash_node_t **new_node,
  *
  * @ht: Sorted hash table
  * @key: key
- * @value: value
+ * @value: value of the function
  *
  * Return: 1 if success 0 if failure
  */
@@ -135,7 +135,7 @@ int shash_insert_into_sorted_list(shash_table_t *ht, const char *key,
 }
 
 /**
- * shash_insert_into_array - inserts into array
+ * shash_insert_into_array - To be inserted onto the Array
  *
  * Description: inserts into buckets
  *
@@ -276,11 +276,11 @@ void shash_table_print(const shash_table_t *ht)
 /**
  * shash_table_print_rev - short description
  *
- * Description: long description
+ * Description: Value for long description
  *
  * @ht: argument_1 description
  *
- * Return: return description
+ * Return: return description value
  */
 
 void shash_table_print_rev(const shash_table_t *ht)
@@ -307,13 +307,13 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 
 /**
- * shash_table_delete_arr - short description
+ * shash_table_delete_arr - Value short description
  *
- * Description: long description
+ * Description: long description Value
  *
  * @ht: argument_1 description
  *
- * Return: return description
+ * Return: return description Value
  */
 
 void shash_table_delete_arr(shash_table_t *ht)
